@@ -1,0 +1,9 @@
+#!/usr/bin/perl  -sp
+sub randcase {
+    rand(100) < 20 ? "\u$_[0]" : "\l$_[0]";
+}
+
+# pass every alphabetic character into the randcase subroutine
+# that capitalises 20% of the characters passed through it
+s/(\w)/randcase($1)/ge;
+
